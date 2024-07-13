@@ -9,7 +9,7 @@ const SenderForm1 = () => {
     <div className="flex justify-center items-center min-h-screen">
       <Card className="w-full max-w-md">
         <CardHeader>
-          <CardTitle>Order a delivery</CardTitle>
+          <CardTitle>Send a package using The Box.</CardTitle>
           <CardDescription className="text-sm text-muted-foreground">
             Welcome to The Box! Fill out the form to set up your package delivery.
           </CardDescription>

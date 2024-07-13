@@ -5,15 +5,14 @@ import { Label } from "~~/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~~/components/ui/select";
 import { Slider } from "~~/components/ui/slider";
 
-const SimpleForm = () => {
+const SenderForm3 = () => {
   return (
     <div className="flex justify-center items-center min-h-screen">
       <Card className="w-full max-w-md">
         <CardHeader>
-          <CardTitle>Configure a delivery bounty.</CardTitle>
+          <CardTitle>Put your package in The Box.</CardTitle>
           <CardDescription className="text-sm text-muted-foreground">
-            This bounty will be placed in escrow. It will be paid our to your Deliverer after they deliver your package.
-            If your delivery is not completed, it will be returned to you.
+            The Box is now unlocked. Please place your package inside The Box. Please close The Box when you are done.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -71,4 +70,4 @@ const SimpleForm = () => {
   );
 };
 
-export default SimpleForm;
+export default SenderForm3;
