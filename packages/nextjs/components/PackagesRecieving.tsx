@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "~~/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "~~/components/ui/card";
 import { Input } from "~~/components/ui/input";
@@ -24,9 +25,9 @@ const PackagesRecieving = () => {
               Complete
             </div>
           </div>
-          <Button variant="outline" size="sm">
-            View
-          </Button>
+          <Link href="/package-info">
+            <Button className="text-white">View</Button>
+          </Link>
         </div>
         <div className="grid grid-cols-[auto_auto_auto_auto] items-center gap-2 md:gap-3 lg:gap-4 rounded-lg bg-background p-4 text-sm md:p-6 lg:text-base border-b border-muted">
           <div>10/12/2024</div>
@@ -36,9 +37,9 @@ const PackagesRecieving = () => {
               Delivering
             </div>
           </div>
-          <Button variant="outline" size="sm">
-            View
-          </Button>
+          <Link href="/package-info">
+            <Button className="text-white">View</Button>
+          </Link>
         </div>
         <div className="grid grid-cols-[auto_auto_auto_auto] items-center gap-2 md:gap-3 lg:gap-4 rounded-lg bg-background p-4 text-sm md:p-6 lg:text-base border-b border-muted">
           <div>10/12/2024</div>
@@ -48,9 +49,9 @@ const PackagesRecieving = () => {
               Waiting
             </div>
           </div>
-          <Button variant="outline" size="sm">
-            View
-          </Button>
+          <Link href="/package-info">
+            <Button className="text-white">View</Button>
+          </Link>
         </div>
       </div>
     </div>

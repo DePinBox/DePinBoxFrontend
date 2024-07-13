@@ -26,10 +26,9 @@ const PackagesDelivering = () => {
                 Complete
               </div>
             </div>
+
             <Link href="/package-info">
-              <Button variant="outline" size="sm">
-                View
-              </Button>
+              <Button className="text-white">View</Button>
             </Link>
           </div>
           <div className="grid grid-cols-[auto_auto_auto] items-center gap-2 md:gap-3 lg:gap-4 rounded-lg bg-background p-4 text-sm md:p-6 lg:text-base border-b border-muted">
@@ -40,9 +39,9 @@ const PackagesDelivering = () => {
                 Delivering
               </div>
             </div>
-            <Button variant="outline" size="sm">
-              View
-            </Button>
+            <Link href="/package-info">
+              <Button className="text-white">View</Button>
+            </Link>
           </div>
           <div className="grid grid-cols-[auto_auto_auto] items-center gap-2 md:gap-3 lg:gap-4 rounded-lg bg-background p-4 text-sm md:p-6 lg:text-base border-b border-muted">
             <div>lmn.eth</div>
@@ -52,9 +51,9 @@ const PackagesDelivering = () => {
                 Waiting
               </div>
             </div>
-            <Button variant="outline" size="sm">
-              View
-            </Button>
+            <Link href="/package-info">
+              <Button className="text-white">View</Button>
+            </Link>
           </div>
         </div>
       </div>
