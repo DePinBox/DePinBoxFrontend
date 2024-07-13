@@ -70,7 +70,9 @@ const Home: NextPage = () => {
               <p className="text-muted-foreground text-center">
                 Mark a package as delivered and complete the shipment.
               </p>
-              <Button className="text-white">Deliver a Package</Button>
+              <Link href="/deliver-package-info">
+                <Button className="text-white">View Available Package</Button>
+              </Link>
             </CardContent>
           </Card>
           <Card>
