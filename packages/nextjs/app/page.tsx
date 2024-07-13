@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "../@/components/ui/button";
-import { Card, CardContent } from "../@/components/ui/card";
+import { Button } from "~~/components/ui/button";
+import { Card, CardContent } from "~~/components/ui/card";
 import type { NextPage } from "next";
 import { useAccount } from "wagmi";
 import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
@@ -93,7 +93,6 @@ const Home: NextPage = () => {
             </CardContent>
           </Card>
         </div>
-      </div>
     </>
   );
 };
