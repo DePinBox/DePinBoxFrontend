@@ -1,3 +1,5 @@
+import PackageDelivererButtons from "./Package-Deliverer-Buttons";
+import PackageRecieverButtons from "./Package-Reciever-Buttons";
 import { Button } from "~~/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "~~/components/ui/card";
 import { Input } from "~~/components/ui/input";
@@ -38,7 +40,7 @@ const PackageInfo = () => {
             </CardHeader>
             <CardContent className="grid gap-3">
               <div className="flex items-center justify-between">
-                <div className="text-muted-foreground">Amount staked</div>
+                <div className="text-muted-foreground">Amount of stake</div>
                 <div>0.5 ETH</div>
               </div>
               <div className="flex items-center justify-between">
@@ -48,10 +50,10 @@ const PackageInfo = () => {
             </CardContent>
           </Card>
           <div className="grid gap-2">
-            <Button size="lg">I received the package</Button>
-            <Button variant="outline" size="lg">
-              Report package lost
-            </Button>
+            <PackageRecieverButtons />
+          </div>
+          <div className="grid gap-2">
+            <PackageDelivererButtons />
           </div>
         </div>
       </div>
