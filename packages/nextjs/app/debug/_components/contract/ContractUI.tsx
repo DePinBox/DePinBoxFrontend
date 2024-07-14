@@ -2,13 +2,13 @@
 
 // @refresh reset
 import { useReducer } from "react";
-import { ContractReadMethods } from "./ContractReadMethods";
-import { ContractVariables } from "./ContractVariables";
-import { ContractWriteMethods } from "./ContractWriteMethods";
 import { Address, Balance } from "~~/components/scaffold-eth";
 import { useDeployedContractInfo, useNetworkColor } from "~~/hooks/scaffold-eth";
 import { useTargetNetwork } from "~~/hooks/scaffold-eth/useTargetNetwork";
 import { ContractName } from "~~/utils/scaffold-eth/contract";
+import { ContractReadMethods } from "./ContractReadMethods";
+import { ContractVariables } from "./ContractVariables";
+import { ContractWriteMethods } from "./ContractWriteMethods";
 
 type ContractUIProps = {
   contractName: ContractName;

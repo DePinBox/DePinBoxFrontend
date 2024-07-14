@@ -1,6 +1,4 @@
-import React from "react";
 import PackageInfo from "~~/components/PackageInfo";
-import { Card, CardContent, CardHeader, CardTitle } from "~~/components/ui/card";
 
 const PackageInfoPage = () => {
   return (

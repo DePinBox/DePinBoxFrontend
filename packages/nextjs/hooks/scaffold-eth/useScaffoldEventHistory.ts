@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
-import { useTargetNetwork } from "./useTargetNetwork";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { Abi, AbiEvent, ExtractAbiEventNames } from "abitype";
+import { useEffect, useState } from "react";
 import { BlockNumber, GetLogsParameters } from "viem";
 import { Config, UsePublicClientReturnType, useBlockNumber, usePublicClient } from "wagmi";
 import { useDeployedContractInfo } from "~~/hooks/scaffold-eth";
@@ -11,6 +10,7 @@ import {
   UseScaffoldEventHistoryConfig,
   UseScaffoldEventHistoryData,
 } from "~~/utils/scaffold-eth/contract";
+import { useTargetNetwork } from "./useTargetNetwork";
 
 const getEvents = async (
   getLogsParams: GetLogsParameters<AbiEvent | undefined, AbiEvent[] | undefined, boolean, BlockNumber, BlockNumber>,

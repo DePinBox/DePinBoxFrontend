@@ -140,10 +140,7 @@ const transformAbiFunction = (abiFunction: AbiFunction): AbiFunction => {
 };
 
 export {
-  getFunctionInputKey,
-  getInitialFormState,
-  getParsedContractFunctionArgs,
-  getInitalTupleFormState,
-  getInitalTupleArrayFormState,
-  transformAbiFunction,
+  getFunctionInputKey, getInitalTupleArrayFormState, getInitalTupleFormState, getInitialFormState,
+  getParsedContractFunctionArgs, transformAbiFunction
 };
+

@@ -20,7 +20,7 @@ contract BoxManager is Ownable {
 		EMPTY,
 		FULL,
 		DELIVERY,
-        DELIVERED
+    DELIVERED
 	}
     
     struct BoxConfiguration {

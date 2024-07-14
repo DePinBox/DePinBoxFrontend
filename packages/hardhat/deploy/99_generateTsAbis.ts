@@ -7,8 +7,8 @@
  */
 
 import * as fs from "fs";
-import prettier from "prettier";
 import { DeployFunction } from "hardhat-deploy/types";
+import prettier from "prettier";
 
 const generatedContractComment = `
 /**

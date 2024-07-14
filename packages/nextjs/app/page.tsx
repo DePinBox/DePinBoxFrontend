@@ -1,20 +1,15 @@
+// @ts-nocheck
 "use client";
 
-import Link from "next/link";
 import type { NextPage } from "next";
-import { useAccount } from "wagmi";
-import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { Address } from "~~/components/scaffold-eth";
-import { Alert, AlertDescription, AlertTitle } from "~~/components/ui/alert";
+import Link from "next/link";
+import { Badge } from "~~/components/ui/badge";
 import { Button } from "~~/components/ui/button";
 import { Card, CardContent } from "~~/components/ui/card";
-import { Badge } from "~~/components/ui/badge";
-import { useReadContract } from "wagmi";
-import {deployedContracts} from "~~/contracts/deployedContracts";
 import { useScaffoldReadContract } from "~~/hooks/scaffold-eth";
 
 const Home: NextPage = () => {
-  const { address: connectedAddress } = useAccount();
+  // const { address: connectedAddress } = useAccount();
 
   const { data: isRegistered } = useScaffoldReadContract({
     contractName: "BoxManager",
@@ -28,22 +23,28 @@ const Home: NextPage = () => {
     args: [BigInt(0)],
   });
 
+  const BoxStatus = {
+    0: 'EMPTY',
+    1: 'FULL',
+    2: 'DELIVERY',
+    3: 'DELIVERED',
+  }
+
+  // const badgeText = BoxStatus[parseInt(boxInfo?[8])]?.toString() || 'Unknown';
+  // const badgeText = parseInt(boxInfo[8]);
+
   return (
     <>
       <div className="flex py-10 flex-col px-5">
         <div className="flex items-center flex-col flex-grow pt-10">
           <div className="px-5">
             <h1 className="text-center">
-              {/* <span className="block text-2xl mb-2">Welcome to</span>
-              <span className="block text-4xl font-bold">The Box</span> */}
-              <span className="block text-4xl mb-2 font-bold">Box.eth</span>
-              {isRegistered ? (
+              <span className="block text-4xl mb-2 font-bold">the-box.eth</span>
+              {isRegistered && boxInfo ? (
                 <div>
-                  <Badge>{boxInfo?.status}</Badge>
+                  <Badge>{BoxStatus[parseInt(boxInfo[8])]?.toString() || 'Unknown'}</Badge>
                 </div>
               ) : ""}
-              {/* <span className="block text-xl">EMPTY</span> */}
-              {/* <Badge>Available</Badge> */}
             </h1>
             <p className="text-center text-lg">The peer-to-peer delivery service. </p>
           </div>

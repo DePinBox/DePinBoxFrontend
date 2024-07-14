@@ -1,5 +1,3 @@
-import React from "react";
-import { ToastPosition, toast } from "react-hot-toast";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import {
   CheckCircleIcon,
@@ -7,6 +5,8 @@ import {
   ExclamationTriangleIcon,
   InformationCircleIcon,
 } from "@heroicons/react/24/solid";
+import React from "react";
+import { ToastPosition, toast } from "react-hot-toast";
 
 type NotificationProps = {
   content: React.ReactNode;

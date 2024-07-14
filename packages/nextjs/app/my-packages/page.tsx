@@ -1,8 +1,7 @@
-import React from "react";
 import PackagesDelivering from "~~/components/PackagesDelivering";
 import PackagesRecieving from "~~/components/PackagesRecieving";
 import PackagesSending from "~~/components/PackagesSending";
-import { Card, CardContent, CardHeader, CardTitle } from "~~/components/ui/card";
+import { Card, CardHeader, CardTitle } from "~~/components/ui/card";
 
 const SenderForm = () => {
   return (

@@ -1,14 +1,15 @@
+// @ts-nocheck
+"use client";
 import { Button } from "~~/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "~~/components/ui/card";
-import { Input } from "~~/components/ui/input";
 import { Label } from "~~/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~~/components/ui/select";
 import { Slider } from "~~/components/ui/slider";
 
 const SenderForm3 = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <Card className="w-full max-w-md">
+    <div className="bg-red-600 flex-col justify-start items-center min-h-screen">
+      <Card className="bg-green-600 w-full max-w-md">
         <CardHeader>
           <CardTitle>Put your package in The Box.</CardTitle>
           <CardDescription className="text-sm text-muted-foreground">
