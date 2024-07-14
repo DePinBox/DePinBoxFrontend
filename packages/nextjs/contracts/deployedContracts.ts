@@ -1082,7 +1082,7 @@ const deployedContracts = {
   },
   11155111: {
     BoxManager: {
-      address: "0x34b7c6C43e6A4803a9cCc1764e3b2F93382dFdc6",
+      address: "0x22F3bB82c0DE0533Ca1aaB7BE88fFe081b3CF829",
       abi: [
         {
           inputs: [

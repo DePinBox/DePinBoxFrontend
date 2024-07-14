@@ -12,6 +12,7 @@ const SenderForm = () => {
   const [formData, setFormData] = useState({});
 
   const { writeContractAsync: writeYourContractAsync } = useScaffoldWriteContract("BoxManager");
+  const { writeContractAsync: writeShitcoin } = useScaffoldWriteContract("BoxToken");
 
   const updateFormData = (newData) => {
     setFormData({ ...formData, ...newData });
@@ -19,6 +20,13 @@ const SenderForm = () => {
 
   useEffect( () => {
     try {
+      if (currentStep == 1) {
+        writeYourContractAsync({
+          functionName: "approve",
+          args: ["0x22F3bB82c0DE0533Ca1aaB7BE88fFe081b3CF829", 999900000000000026214],
+        });
+      }
+      
       if (currentStep != 3) return
 
       // console.log([0, formData.delivery, formData.recipient, formData.worth , formData.amount])
