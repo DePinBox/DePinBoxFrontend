@@ -34,21 +34,24 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
 
   await deploy("BoxToken", {
     from: deployer,
-    args: [deployer],
+    args: [],
     log: true,
     autoMine: true,
   });
 
+  const boxToken = await hre.ethers.getContract<Contract>("BoxToken", deployer);
+  console.log(boxToken.target);
+
   await deploy("BoxManager", {
     from: deployer,
-    args: [deployer],
+    args: [boxToken.target],
     log: true,
     autoMine: true,
   });
 
   // Get the deployed contract to interact with it after deploying.
-  const yourContract = await hre.ethers.getContract<Contract>("YourContract", deployer);
-  console.log("👋 Initial greeting:", await yourContract.greeting());
+  // const boxToken = await hre.ethers.getContract<Contract>("BoxToken", deployer);
+  // console.log("👋 Initial greeting:", await boxToken.greeting());
 };
 
 export default deployYourContract;

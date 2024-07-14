@@ -8,9 +8,25 @@ import { Address } from "~~/components/scaffold-eth";
 import { Alert, AlertDescription, AlertTitle } from "~~/components/ui/alert";
 import { Button } from "~~/components/ui/button";
 import { Card, CardContent } from "~~/components/ui/card";
+import { Badge } from "~~/components/ui/badge";
+import { useReadContract } from "wagmi";
+import {deployedContracts} from "~~/contracts/deployedContracts";
+import { useScaffoldReadContract } from "~~/hooks/scaffold-eth";
 
 const Home: NextPage = () => {
   const { address: connectedAddress } = useAccount();
+
+  const { data: isRegistered } = useScaffoldReadContract({
+    contractName: "BoxManager",
+    functionName: "isBoxRegistered",
+    args: [BigInt(0)],
+  });
+
+  const { data: boxInfo } = useScaffoldReadContract({
+    contractName: "BoxManager",
+    functionName: "boxes",
+    args: [BigInt(0)],
+  });
 
   return (
     <>
@@ -18,8 +34,16 @@ const Home: NextPage = () => {
         <div className="flex items-center flex-col flex-grow pt-10">
           <div className="px-5">
             <h1 className="text-center">
-              <span className="block text-2xl mb-2">Welcome to</span>
-              <span className="block text-4xl font-bold">The Box</span>
+              {/* <span className="block text-2xl mb-2">Welcome to</span>
+              <span className="block text-4xl font-bold">The Box</span> */}
+              <span className="block text-4xl mb-2 font-bold">Box.eth</span>
+              {isRegistered ? (
+                <div>
+                  <Badge>{boxInfo?.status}</Badge>
+                </div>
+              ) : ""}
+              {/* <span className="block text-xl">EMPTY</span> */}
+              {/* <Badge>Available</Badge> */}
             </h1>
             <p className="text-center text-lg">The peer-to-peer delivery service. </p>
           </div>

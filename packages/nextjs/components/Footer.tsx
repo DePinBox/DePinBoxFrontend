@@ -8,6 +8,7 @@ import { BuidlGuidlLogo } from "~~/components/assets/BuidlGuidlLogo";
 import { Faucet } from "~~/components/scaffold-eth";
 import { useTargetNetwork } from "~~/hooks/scaffold-eth/useTargetNetwork";
 import { useGlobalState } from "~~/services/store/store";
+// import { getTargetNetworks } from "~~/utils/scaffold-eth";
 
 /**
  * Site footer
@@ -20,6 +21,7 @@ export const Footer = () => {
   return (
     <div className="min-h-0 py-5 px-1 mb-11 lg:mb-0">
       <div className="w-full">
+      <Faucet />
         <ul className="menu menu-horizontal w-full">
           <div className="flex justify-center items-center gap-2 text-sm w-full">
             <div className="text-center">

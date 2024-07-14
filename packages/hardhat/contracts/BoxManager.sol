@@ -42,7 +42,7 @@ contract BoxManager is Ownable {
     BoxStatus status;
   }
 
-  constructor(address initialOwner, IERC20 _token) Ownable(initialOwner) {
+  constructor(IERC20 _token) Ownable() {
     token = _token;
   }
 
