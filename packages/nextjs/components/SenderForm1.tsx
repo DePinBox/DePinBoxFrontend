@@ -17,7 +17,10 @@ const SenderForm1 = ({ onUpdate, onNext }) => {
 
   const { data: ens } = useEnsAddress({
     name: recipient[0],
+    chainId: 1
   });
+
+  console.log(ens)
 
   const handleNext = async () => {
     // @ToDo - validate form

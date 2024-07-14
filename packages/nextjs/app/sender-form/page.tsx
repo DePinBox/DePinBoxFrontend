@@ -10,8 +10,9 @@ import { useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 const SenderForm = () => {
   const [currentStep, setCurrentStep] = useState(1); 
   const [formData, setFormData] = useState({});
+  const [loading, setLoading] = useState(true);
 
-  const { writeContractAsync: writeYourContractAsync } = useScaffoldWriteContract("BoxManager");
+  const { writeContractAsync: writeYourContractAsyn } = useScaffoldWriteContract("BoxManager");
   const { writeContractAsync: writeShitcoin } = useScaffoldWriteContract("BoxToken");
 
   const updateFormData = (newData) => {
@@ -20,12 +21,21 @@ const SenderForm = () => {
 
   useEffect( () => {
     try {
-      if (currentStep == 1) {
-        writeYourContractAsync({
+      if (currentStep == 1 && loading == true) {
+        setLoading(false);
+        writeShitcoin({
           functionName: "approve",
           args: ["0x22F3bB82c0DE0533Ca1aaB7BE88fFe081b3CF829", 999900000000000026214],
-        });
+        }).catch((e) => console.log(e));
       }
+
+    } catch (e) {
+        console.error(e);
+    }
+}, []);
+
+  useEffect( () => {
+    try {
       
       if (currentStep != 3) return
 
